@@ -1,0 +1,38 @@
+  <div id = "information"> 
+      <br/>
+      <h1>Compare Prices</h1>
+      <p>Check and compare prices across different stores within Qatar.<br> <br></p>
+  </div>  
+
+
+
+
+  <% @products.each do |product| %>
+
+
+  <div class="compare-list">
+    <% if product.category == "LCDs" %>
+    <ul>
+      <li>   
+        <%= image_tag product.photo.url %>
+         <h3> <%= link_to product.name, product %> <% link_to product %></h3> 
+       <p>Comes in 3 colors. Price range (2000QRS - 4000QRS)</p><br/>   
+       <%= link_to "Add Prices", newprice_path(:product => product.id) %>
+      </li>
+      </ul>
+      <% end %>
+  </div>
+
+    <% end %> 
+         
+
+  
+<div class="right">
+  <div id="addSlider">
+    <%= link_to image_tag("htcad.jpg", alt: "Advertisement"), 'home' %>
+    <%= link_to image_tag("lulu.jpg", alt: "Advertisement"), 'home' %>
+    <%= link_to image_tag("sharaf.jpg", alt: "Advertisement"), 'home' %>
+  </div>
+</div>
+   
+   

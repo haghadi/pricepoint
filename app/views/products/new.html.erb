@@ -1,0 +1,26 @@
+<% provide(:title, 'New Product') %>
+<h1>New Product</h1>
+
+<div class="row">
+
+          
+    <%= form_for @product, :html => { :multipart => true } do |f| %>
+ 
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :category %>
+      <%= f.select :category, options_for_select(%w[Smartphone Cameras LCDs Consoles]) %> <br/><br/>
+
+      <%= f.label :storage, "Storage Capacity" %>
+      <%= f.text_field :storage %>
+	    
+      <%= f.label :color, "Color" %>
+      <%= f.text_field :color %>
+
+      <%= f.label :photo, "Photo" %>
+      <%= f.file_field :photo %>
+
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>

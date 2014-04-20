@@ -1,0 +1,57 @@
+  <div id = "information"> 
+      <br/>
+      <h1>Compare Prices</h1>
+      <p>Check and compare prices across different stores within Qatar.<br> <br></p>
+  </div>  
+
+
+
+<div class="right">
+  <div id="addSlider">
+    <%= link_to image_tag("htcad.jpg"), 'home' %>
+    <%= link_to image_tag("lulu.jpg"), 'home' %>
+    <%= link_to image_tag("sharaf.jpg"), 'home' %>
+  </div>
+</div> 
+
+
+  <% @products.each do |product| %>
+
+  <div class="compare-list"> 
+    <% if product.category == "Smartphone" %>
+    <ul>
+      <li>   
+        <%= image_tag product.photo.url %>
+         <h3> <%= link_to product.name, product %></h3> 
+
+
+        <% @a = [] %>
+         <% @prices.each do |p| %>
+         <% if product.id == p.product_id %> 
+         <% @a << p %>  
+         <% end %> 
+         <% @a.sort_by! {|p|p.price} %>
+         <% end %> 
+
+         <% if @a.count >= 2 %>
+
+     <h4> QR <span><%= @a[0].price %> - <%= @a[-1].price %></span></h4>  
+
+     <% elsif @a.count >= 1 %>
+     <h4> QR <span><%= @a[0].price %></span></h4>  
+
+       <% end %> 
+
+        <% if signed_in? %>
+        <% if current_user.admin? %>
+        <%= link_to "delete", product, method: :delete %>                              
+      <% end %>
+      <%end %>
+
+       <a href="#" class="compare-button">Compare Prices </a><br/>   
+      </li>
+      </ul>
+      <% end %>
+  </div>
+
+    <% end %>

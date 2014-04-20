@@ -1,0 +1,16 @@
+<% provide(:title, 'New Price') %>
+<h1>New Price for  </h1>
+<div class="row">
+
+    <%= form_for(@price) do |f| %>
+
+      <%= f.label :price, "Price" %>
+      <%= f.text_field :price %>  
+
+      <% @url = request.url %>
+      <% @url = @url.split('').last %>
+
+      <%= f.hidden_field :product_id, :value => @url.to_i  %>
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>

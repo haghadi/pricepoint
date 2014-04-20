@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PricePoint | Welcome</title>
+    <%= stylesheet_link_tag "index2", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "js-image-slider", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "styleslider", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "cbdb-search-form", media: "all", "data-turbolinks-track" => true %> 
+    <%= stylesheet_link_tag "product", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "addSlider", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "form", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "js-image-slider_center", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "tabcontent", media: "all", "data-turbolinks-track" => true %>
+
+    <%= javascript_include_tag "tooltip", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "tooltip", media: "all", "data-turbolinks-track" => true %>
+    
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans"%>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Josefin+Slab"%>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato"%>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=HelveticaNeueW02-UltLt"%>
+    
+    <%= javascript_include_tag "addSlider", "data-turbolinks-track" => true %>
+    
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "js-image-slider", "data-turbolinks-track" => true %>
+
+    <%= javascript_include_tag "tabcontent", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" %>
+
+
+
+    <%= javascript_include_tag "responsiveslides.min", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" %>
+    <%= javascript_include_tag "prefix-free", "data-turbolinks-track" => true %>
+
+    <%= javascript_tag do %>
+        $(function () {
+              $("#slider2").responsiveSlides({
+                  maxwidth: 800,
+                  speed: 200
+              });
+          });
+    <% end %>
+    
+    <%= csrf_meta_tags %>
+    
+
+  </head>
+  
+    <body>
+        <div id='container'>          
+          <%= render 'partials/header' %>
+        
+          <%= yield %>
+
+          <%= render 'partials/footer' %>
+        </div>
+    </body>
+</html>
+
+
+      

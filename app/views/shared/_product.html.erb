@@ -1,0 +1,12 @@
+<%= will_paginate @products %>
+
+
+	<% @products.each do |product| %>
+		<li>
+			<td><%= link_to product.name, product %> <% link_to product %></td>
+		</li>
+	<% end %> 
+
+
+
+<%= will_paginate @products %>

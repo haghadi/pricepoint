@@ -1,0 +1,37 @@
+<div class="right">
+  <div id="addSlider">
+    <%= link_to image_tag("htcad.jpg"), 'home' %>
+    <%= link_to image_tag("lulu.jpg"), 'home' %>
+    <%= link_to image_tag("sharaf.jpg"), 'home' %>
+  </div>
+</div> 
+
+  <div id = "information"> 
+      <br/>
+      <h1>Compare Prices</h1>
+      <p>Check and compare prices across different stores within Qatar.<br> <br></p>
+  </div>  
+
+
+
+
+  <% @products.each do |product| %>
+
+
+  <div class="compare-list">
+    <% if product.category == "Smartphone" %>
+    <ul>
+      <li>   
+        <%= image_tag product.photo.url %>
+         <h3> <%= link_to product.name, product %> <% link_to product %></h3> 
+       <%= link_to "Add Prices", newprice_path(:product => product.id) %> 
+      </li>
+      </ul>
+      <% end %>
+  </div>
+
+    <% end %> 
+         
+
+   
+   

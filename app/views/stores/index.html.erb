@@ -1,0 +1,14 @@
+<% provide(:title, 'All Stores') %> 
+<h1>Listing Stores</h1>
+
+<%= will_paginate %>
+
+<ul class="stores">
+	<% @stores.each do |store| %>
+		<li>
+			<td><%= link_to store.storeName, store %> <% link_to store %></td>
+		</li>
+	<% end %> 
+</ul>
+
+<%= will_paginate %>

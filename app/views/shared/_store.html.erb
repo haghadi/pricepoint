@@ -1,0 +1,27 @@
+<%= will_paginate @stores %>
+
+
+<% if signed_in?%>
+
+<ul class="stores">
+	<% current_store.each do |store| %>
+		<li>
+			<td><%= link_to store.name, store %> <% link_to store %></td>
+		</li>
+	<% end %> 
+</ul>
+	
+<% else %>
+
+<ul class="users">
+	<% @stores.each do |store| %>
+		<li>
+			
+			<td><%= link_to store.name, store %> <% link_to store %></td>
+		</li>
+	<% end %> 
+</ul>
+
+<% end %>
+
+<%= will_paginate @stores %>

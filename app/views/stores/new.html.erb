@@ -1,0 +1,21 @@
+<% provide(:title, 'New Store') %>
+<h1>New Store</h1>
+
+<div class="row">
+
+    <%= form_for @store, :html => { :multipart => true } do |f| %>
+
+      <%= f.label :storeName, "Company Name" %>
+      <%= f.text_field :storeName %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+
+  	  <%= f.label :photo %>
+  	  <%= f.file_field :photo %>
+
+
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+</div>
